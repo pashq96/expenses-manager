@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>route</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/filterSorting.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class='filterSorting'>
+        <label><input id="addRouteBtn" type="button" value="Добавить новый расход" onClick='location.href="add_route.html"'>
+		</label>
+        <label for="dateWith">Фильтрация: <br><br>
+		С:
+		<input type="text" class='date' id='dateWith'>
+		</label>
+        <label for="dateTo">До:
+         <input type="text" class='date' id='dateTo'>
+         </label>
+        <label>Сортировка:
+        <select id="choose">
+            <option value="sortDate">По дате</option>
+            <option value="sortCost">По сумме</option>
+        </select>
+        </label>
+        <div class="list">
+            <h3>Список расходов. Сумма:
+                <sapn id='sum'></sapn> руб.</h3>
+            <div id='listCosts'>
+                <ul id="tdList">
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

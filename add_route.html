@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>add route</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/filterSorting.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script>
+        //генерируем случайный id
+        $(document).ready(function() {
+            function getRandomInRange(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            let randomVal = $('.id').val(getRandomInRange(1, 100000))
+
+            for (var i = 0; i < localStorage.length; i++) {
+                key = localStorage.key(i)
+                let val = $('.id').val()
+                if (key == val) {
+                    $('.id').val(getRandomInRange(1, 100000))
+                    i = -1
+                }
+            }
+        })
+
+    </script>
+
+    <div class='filterSorting'>
+        <h2>Добавление расхода</h2>
+        <label>Идентификатор:
+    <input type="text" class='id' >
+    </label>
+        <label>Название:
+	<input type="text" class='name' >
+	</label>
+        <label>Сумма:
+	<input type="text" class='cost'>
+	</label>
+        <label>Дата:
+	<input type="text" class='date'>
+	</label>
+        <label>
+	<input type="button" value="Добавить" id='addRoute'>
+    </label>
+    </div>
+
+</body>
+
+</html>
